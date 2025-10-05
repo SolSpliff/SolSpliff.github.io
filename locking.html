@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Locking & Weekly Rewards - SolSpliff</title>
+    <meta name="description" content="Lock your SolSpliff tokens to earn entries into weekly draws funded by creator rewards." />
+    <meta name="keywords" content="SolSpliff, lock, locking, staking, rewards, weekly draw, creator rewards" />
+
+    <link rel="stylesheet" href="style.css?v=420" />
+    
+    <script src="images-list.js?v=420"></script>
+    <script src="scripts.js?v=420"></script>
+    <script src="loadlater.js?v=420" defer></script>
+    <script src="includes.js?v=420" defer></script>
+</head>
+<body>
+
+<!-- Include Navbar -->
+<div data-include="navbar.html"></div>
+
+<!-- Spacer to offset fixed navbar -->
+<div class="spacer"></div>
+
+<header>
+    <h1>Locking & Weekly Rewards</h1>
+    <p>Lock your SPLF to earn entries into weekly draws — funded from creator rewards.</p>
+</header>
+
+<div class="container">
+    <h2>Effective date: <strong>2025-10-TBA</strong></h2>
+
+    <h3>Overview</h3>
+    <p>For the first <strong>3 months after launch</strong>, holders who lock SolSpliff (SPLF) tokens using our official locking interface will be entered into weekly prize draws. The prize pool for each week is funded from <strong>10% of creator rewards</strong>. Prizes are distributed weekly and multiple winners may be chosen each week.</p>
+
+    <hr />
+
+    <h3>How entries work</h3>
+    <p>Entries are calculated based on two dimensions: the amount locked (in 500,000 SPLF increments) and the lock duration (in 3-month increments). Entries are awarded at the time you lock and remain active until they win (entries are removed once they win).</p>
+
+    <h4>Base rules</h4>
+    <ul>
+        <li><strong>Minimum increment:</strong> 500,000 SPLF per entry.</li>
+        <li><strong>Minimum lock duration:</strong> 3 months (90 days). Locks must be made in 3-month increments (3 months, 6 months, 9 months, ...).</li>
+        <li><strong>Promotional period:</strong> entries are available during the first 3 months after launch. Locks made during this promotional window are eligible according to the rules below.</li>
+        <li><strong>Entry persistence:</strong> an entry remains in the pool until it wins. When an entry wins, that entry is removed from the pool. Additional locks create new entries as described below.</li>
+    </ul>
+
+    <h4>Entry math & examples</h4>
+    <p>Each 500,000 SPLF locked for 3 months = <strong>1 entry</strong>. Increasing the locked amount or the lock duration increases entries proportionally:</p>
+    <ul>
+        <li><strong>500,000 SPLF locked for 3 months</strong> = 1 entry</li>
+        <li><strong>1,000,000 SPLF locked for 3 months</strong> = 2 entries</li>
+        <li><strong>500,000 SPLF locked for 6 months</strong> = 2 entries (because 6 months = two 3-month increments)</li>
+        <li><strong>1,500,000 SPLF locked for 9 months</strong> = 9 entries ( (1,500,000 ÷ 500,000) × (9 ÷ 3) = 3 × 3 = 9 )</li>
+    </ul>
+    <p><em>Simple calculation:</em> <strong>entries = (locked amount ÷ 500,000) × (lock months ÷ 3)</strong>.</p>
+
+    <h3>Prize pool & distribution</h3>
+    <ul>
+        <li><strong>Funding:</strong> 10% of creator rewards are allocated to the weekly prize pool.</li>
+        <li><strong>Distribution cadence:</strong> prizes are awarded weekly. Each week's winners split that week's available pool according to the distribution rules announced before each draw.</li>
+        <li><strong>Multiple winners:</strong> each weekly draw may select multiple winners. A single holder may hold multiple entries and may therefore win multiple times across weeks — but individual entries are removed after they win.</li>
+        <li><strong>Payout method:</strong> prize payouts are sent to the wallet address used to lock tokens (on-chain transfer). Ensure your locking wallet is accessible to receive prizes.</li>
+    </ul>
+
+    <h3>Eligibility & requirements</h3>
+    <ul>
+        <li>You must lock tokens using the official SolSpliff locking interface or contract to be eligible.</li>
+        <li>Locks must meet the 500,000 SPLF / 3-month increment rule to generate entries.</li>
+        <li>Entries are granted only for locks initiated during the promotional window (the first 3 months after launch).</li>
+        <li>If you unlock early (before the minimum lock term completes), your entry for that lock may be voided — early unlock rules will be enforced by the locking contract and may result in removal of the associated entries.</li>
+    </ul>
+
+    <h3>Selection process & transparency</h3>
+    <p>Winners will be chosen by a randomized draw. We will publish the selection methodology and the weekly list of winners in the community channels. Where possible we will use a transparent/randomized method (for example, on-chain randomness or a verifiable seed) — details of the exact method will be posted before the first draw.</p>
+
+    <h3>Tax, liability & risks</h3>
+    <ul>
+        <li>Winners are responsible for any taxes or reporting obligations in their jurisdiction.</li>
+        <li>By participating you should be aware of the normal risks associated with crypto assets and smart contracts. We’ve implemented encryption and secure handling for the bot’s stored data; however, you should still follow best practices for wallet and key management.</li>
+        <li>We are not responsible for lost access to wallets or private keys. If you lose access to a wallet that holds locked tokens, you may forfeit rewards or be unable to claim prizes tied to that wallet.</li>
+    </ul>
+
+    <h3>Server hosting & security posture</h3>
+    <p>Prize administration and any off-chain components (draw coordination, entries database, announcement pages) will be hosted on a rented server paid from creator rewards. As with other SolSpliff infrastructure, we will rely on standard hosting provider protections; we will not implement additional managed security services unless the community votes to allocate funds for them. This means there is an increased risk compared to a fully hardened environment — participate only if you accept that risk.</p>
+
+    <h3>Entry removal & additional locking</h3>
+    <p>When an entry wins it is removed from the active pool. If you lock additional tokens later (or extend locks) you will create new entries according to the same formula above. Entries do not expire automatically while the promotion is running — they remain until they win or until the project removes them (for example, due to early unlock or rule violation).</p>
+
+    <h3>Disputes & audit</h3>
+    <p>Audit records for locks, entries, and payouts will be retained for a limited period to allow dispute resolution. If you believe there is an issue with a draw, contact us and provide transaction evidence (tx hashes, wallet addresses). We will investigate and correct any confirmed errors.</p>
+
+    <h3>Changes & termination</h3>
+    <p>SolSpliff reserves the right to modify or terminate the locking rewards program or the weekly draws at any time. Material changes will be announced in the community channels and on this page. If the program is terminated early, we will explain how outstanding entries and locked tokens are handled. SolSpliff, its owners, or affiliates will not keep any funds that were allocated for locking rewards. If a scheduled payout's available reward pool is less than 1 SOL in value, we may defer that payout and roll the funds into the next distribution period until the pool reaches at least 1 SOL; funds will remain reserved for rewards and will not be retained by for SolSpliff or its affiliates.</p>
+
+    <h3>Contact</h3>
+    <p>Questions about locking or weekly draws: <strong>solsplf@gmail.com</strong></p>
+
+    <hr />
+
+    <p><em>Note:</em> This page explains the locking promotion and mechanics. It is not legal advice. There is no SolSpliff-controlled locking contract — token locking is handled by third-party services and platforms. SolSpliff does not operate, control, or have access to those third parties’ locking mechanisms, smart contracts, or internal records. Because we cannot audit or modify those services, their implementations and any associated smart-contract code (if used) are the source of truth for technical enforcement. Please review the third-party provider’s documentation and exercise caution before participating.</p> <p><strong>Draws & announcements:</strong> Draws will be conducted live on-stream and winners will be announced during the broadcast. Where third parties provide verifiable on-chain proofs (transaction hashes or similar), we will publish them after each draw. By participating you acknowledge these limitations and accept the associated risks.</p>
+</div>
+
+<!-- Include Footer -->
+<div data-include="footer.html"></div>
+
+</body>
+</html>

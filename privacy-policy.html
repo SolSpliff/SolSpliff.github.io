@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Privacy Policy - SolSpliff</title>
+    <meta name="description" content="Privacy Policy for SolSpliff token and DAO — what data we collect, how we use it, and your rights." />
+    <meta name="keywords" content="SolSpliff, privacy policy, data, wallet, telegram, DAO, Solana" />
+
+    <link rel="stylesheet" href="style.css?v=420" />
+    
+    <script src="images-list.js?v=420"></script>
+    <script src="scripts.js?v=420"></script>
+    <script src="loadlater.js?v=420" defer></script>
+    <script src="includes.js?v=420" defer></script>
+</head>
+<body>
+
+<!-- Include Navbar -->
+<div data-include="navbar.html"></div>
+
+<!-- Spacer to offset fixed navbar -->
+<div class="spacer"></div>
+
+<header>
+    <h1>Privacy Policy</h1>
+    <p>How SolSpliff collects and handles data for DAO voting and community features.</p>
+</header>
+
+<div class="container">
+    <h2>Effective date: <strong>2025-10-02</strong></h2>
+
+    <h3>Quick summary</h3>
+    <p>SolSpliff collects only the information strictly necessary to operate community voting and basic site functions. Typical items are your <strong>Telegram ID</strong>, your public <strong>wallet address</strong>, and a <strong>wallet signature</strong> used for a one-time verification step. We do not keep raw wallet signatures — see details below. Voting and verification services are hosted on a rented server funded from creator rewards. We employ standard hosting protections and encrypt bot-stored data; we will continue to improve protections as resources and governance permit.</p>
+
+    <hr />
+
+    <h3>1. Data we collect</h3>
+    <ul>
+        <li><strong>Telegram ID</strong> — used to map community/chat accounts to voting eligibility and to deliver governance notices.</li>
+        <li><strong>Wallet address (public key)</strong> — used to confirm DAO voting eligibility, record votes, and enable token-related features. Wallet addresses are public on-chain; we store them only to associate with off-chain voter records when needed.</li>
+        <li><strong>Wallet signature</strong> — used to verify that you control a wallet during the one-time verification step. <strong>We do not retain raw signatures.</strong> Instead we store a verification result (verified: true/false) and a timestamp, or a short, one-way hash of the verification record when necessary for auditability.</li>
+        <li><strong>Encrypted bot data</strong> — certain verification records and minimal user linkage data may be stored by our bot in encrypted form. Only encrypted blobs are stored; decryption keys are managed according to secure practices.</li>
+        <li><strong>Derived / minimal logs</strong> — verification timestamps, vote timestamps, and small audit logs needed to maintain vote integrity.</li>
+        <li><strong>Site cookies / analytics</strong> — basic cookies required for site function and lightweight analytics; we do not run invasive cross-site tracking by default.</li>
+    </ul>
+
+
+    <h3>2. How we use your data</h3>
+    <p>We process the above data for the following purposes:</p>
+    <ul>
+        <li>Operate DAO voting and governance (eligibility checks, recording and tallying votes).</li>
+        <li>Prevent duplicate or fraudulent votes and preserve vote integrity.</li>
+        <li>Communicate governance updates, voting results, or urgent security notices to Telegram-linked accounts.</li>
+        <li>Maintain minimal logs to support audits and dispute resolution when necessary.</li>
+    </ul>
+
+    <h3>3. Wallet signatures — what we keep (and what we don’t)</h3>
+    <p>When you sign a nonce to prove wallet ownership, server-side verification confirms control of the wallet. <strong>We do not store your raw signature.</strong> After verification we retain only:</p>
+    <ul>
+        <li>A verification boolean (`verified: true/false`)</li>
+        <li>A verification timestamp</li>
+        <li>Optionally, a one-way cryptographic hash of a minimal verification record (never the signature itself) if a tamper-evident audit reference is required</li>
+    </ul>
+    <p>If you prefer we do not store even the boolean or timestamp, contact us to discuss the trade-offs (you may need to re-verify more frequently).</p>
+
+    <h3>4. Server hosting & funding</h3>
+    <p>We operate a rented server (hosting and domain) funded from SolSpliff creator rewards. The server runs our off-chain voting and verification tools and stores the minimal records described above. Creator rewards pay for hosting and maintenance.</p>
+
+    <h3>5. Security & risk disclosure</h3>
+    <p><strong>Important:</strong> protecting user data is a priority. We implement practical, community-focused security measures while keeping operations transparent. Below is a summary of our approach and recommendations for users:</p>
+
+    <ul>
+      <li><strong>Hosting basics:</strong> we use reputable hosting providers and standard protections (TLS, firewalling, and patching) appropriate to a community-run project.</li>
+      <li><strong>Encryption:</strong> the Telegram bot and related back-end services encrypt stored data at rest, and protect data in transit. Encryption helps reduce exposure in the event of a breach.</li>
+      <li><strong>Key management:</strong> encryption keys are handled with restricted access and secure practices; when possible we use secrets management tools or hardware-backed stores.</li>
+      <li><strong>Practical approach and upgrades:</strong> we balance security investments with community governance and will upgrade protections if/when the community approves funding for additional managed security services.</li>
+      <li><strong>User responsibility:</strong> keep private keys and recovery phrases secret; we never ask for private keys. Follow standard crypto-security best practices.</li>
+    </ul>
+
+    <p>While encryption and best practices significantly reduce risk, no system can guarantee absolute security. We combine technical protections with transparency and clear user guidance to help you use SolSpliff features safely.</p>
+
+    <h3>6. Retention</h3>
+    <p>Our default retention schedule is:</p>
+    <ul>
+        <li>Verification results & timestamps: retained for <strong>90 days</strong>, then deleted unless required for an ongoing audit or dispute.</li>
+        <li>Records pairing Telegram ID + wallet address for an active vote: retained for the active governance period plus <strong>1 year</strong> for auditability, then deleted or anonymized.</li>
+        <li>Security / incident logs: retained up to <strong>2 years</strong> if needed for investigations or legal compliance.</li>
+    </ul>
+
+    <h3>7. Sharing & third parties</h3>
+    <p>We may share minimal data with third-party providers required to operate services (hosting, database, analytics). Any third party that processes personal data on our behalf is contractually required to process data only for the purposes we specify and to follow appropriate security controls.</p>
+    <p>We will disclose data to law enforcement or regulators only when required by law or valid legal process.</p>
+
+    <h3>8. Your rights</h3>
+    <p>Depending on your jurisdiction, you may have rights such as access, correction, deletion, portability, and objection to certain processing. To exercise your rights or request deletion, contact us at the address below. We will respond within applicable legal timeframes.</p>
+
+    <h3>9. Children</h3>
+    <p>We do not knowingly collect data from children under the age of 13. If you believe we have collected such data, contact us and we will promptly remove it.</p>
+
+    <h3>10. Changes to this policy</h3>
+    <p>We may update this Privacy Policy from time to time. Material changes will be posted on this page and announced in our community channels, with a revised effective date.</p>
+
+    <h3>11. Contact</h3>
+    <p>Questions, requests, or complaints: <strong>solsplf@gmail.com</strong></p>
+
+    <hr />
+
+    <p><em>Disclaimer:</em> This Privacy Policy is provided as-is and is not legal advice. If you require compliance with specific laws (GDPR, CCPA, PIPEDA, or others), consider consulting legal counsel and adjusting practices accordingly.</p>
+</div>
+
+<!-- Include Footer -->
+<div data-include="footer.html"></div>
+
+</body>
+</html>
