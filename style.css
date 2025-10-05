@@ -1,21 +1,24 @@
-/* Global reset for margins and paddings */
+/* ==========================
+   GLOBAL STYLES
+   ========================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* General Body Styling */
 html, body {
     font-family: Arial, sans-serif;
     background-color: #f7f7f7;
     color: #333;
     height: 100%;
     overflow-x: hidden;
-    scroll-behavior: smooth; /* ✅ Smooth scroll */
+    scroll-behavior: smooth;
 }
 
-/* Navbar Styling */
+/* ==========================
+   NAVBAR BASE
+   ========================== */
 .navbar {
     background-color: #004d40;
     width: 100%;
@@ -24,90 +27,109 @@ html, body {
     left: 0;
     z-index: 1000;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
+    padding: 8px 16px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-
-    /* ✅ Improve scroll performance */
     transform: translateZ(0);
     will-change: transform;
 }
 
-/* Spacer to push content below fixed navbar
-   NOTE: adjust this value if you change the navbar/logo heights below */
-.spacer {
-    height: 140px; /* updated to match larger navbar height on desktop */
+/* push content below fixed navbar */
+body {
+    padding-top: 100px;
 }
 
-/* Logo styling */
+/* Logo */
 .navbar .logo img {
-    max-height: 140px; /* larger on desktop */
+    height: 90px;
     width: auto;
-    height: auto;
-    background-color: transparent;
+    background: transparent;
     display: block;
+    transition: transform 0.3s ease;
 }
-
-/* Navbar List */
-.navbar ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style-type: none;
-}
-
-.navbar li {
-    margin: 0 20px;
-}
-
-.navbar a {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 18px;
-    font-weight: 600;
-    text-transform: uppercase;
-    padding: 12px 20px;
-    display: inline-block;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    letter-spacing: 1px;
-
-    /* ✅ Optimize animations */
-    will-change: transform, box-shadow;
-}
-
-/* Navbar Hover Effect */
-.navbar a:hover {
-    background-color: #00796b;
-    transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
-/* Active Link Styling */
-.navbar a.active {
-    background-color: #00796b;
-    color: white;
+.navbar .logo img:hover {
     transform: scale(1.05);
 }
 
-/* Mobile Hamburger Icon (hidden by default on desktop) */
+/* Hamburger Icon (always visible) */
 .navbar .hamburger {
-    display: none;
+    display: block;
+    font-size: 32px;
+    line-height: 1;
+    padding: 8px 12px;
     cursor: pointer;
-    font-size: 30px;
-    color: white;
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    color: #fff;
+    background: transparent;
+    border: none;
+    transition: transform 0.3s ease;
+}
+.navbar .hamburger:hover {
+    transform: scale(1.1);
 }
 
-/* Content Styling */
+/* Dropdown Menu (hidden by default) */
+.navbar ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100px;
+    right: 16px;
+    width: 320px;
+    max-width: calc(100% - 32px);
+    background-color: #004d40;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    list-style: none;
+    z-index: 1500;
+    padding: 10px 0;
+    animation: dropdownFade 0.25s ease-in-out;
+}
+
+.navbar ul.show {
+    display: flex !important;
+}
+
+/* Dropdown Items */
+.navbar ul li {
+    margin: 0;
+}
+.navbar ul li a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    padding: 14px 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+.navbar ul li a:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateX(5px);
+}
+
+/* Active Link */
+.navbar ul li a.active {
+    background-color: #00796b;
+}
+
+/* Small Glow / Fade Animation */
+@keyframes dropdownFade {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================
+   MAIN CONTENT
+   ========================== */
 .container {
     width: 80%;
     margin: 20px auto;
     padding: 20px;
-    background-color: white;
+    background-color: #fff;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     border-radius: 8px;
 }
@@ -121,7 +143,7 @@ p {
     margin: 10px 0;
 }
 
-/* Call to Action Button */
+/* Buttons */
 .cta-button {
     background-color: #004d40;
     color: white;
@@ -132,15 +154,14 @@ p {
     margin-top: 20px;
     letter-spacing: 1px;
     display: inline-block;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
-
 .cta-button:hover {
     background-color: #00796b;
     transform: scale(1.05);
 }
 
-/* Footer Styling */
+/* Footer */
 .footer {
     text-align: center;
     font-size: 1em;
@@ -148,146 +169,43 @@ p {
     margin-top: 40px;
 }
 
-/* Mobile Navbar Styling (legacy smaller-screen rules retained as fallback) */
-@media screen and (max-width: 768px) {
-    .navbar ul {
-        flex-direction: column;
-        width: 100%;
-        background-color: #004d40;
-        position: absolute;
-        top: 110px;
-        left: 0;
-        text-align: center;
-        display: none;
-        padding: 0;
-    }
-
-    .navbar li {
-        margin: 15px 0;
-    }
-
-    .navbar a {
-        font-size: 20px;
-        padding: 15px;
-    }
-
-    .navbar ul.show {
-        display: flex;
-    }
-
-    .navbar .hamburger {
-        display: block;
-    }
-}
-
-/* ---- improved responsive navbar overrides ---- */
-/* Default desktop layout: full horizontal menu, large logo */
-.navbar {
-    justify-content: center;
-    padding: 10px 0;
-}
-.navbar .logo {
-    flex: 0 0 auto;
-    margin-right: 18px;
-}
-.navbar .logo img {
-    max-height: 140px;
-    width: auto;
-    height: auto;
-    display: block;
-}
-.navbar .hamburger {
-    display: none;
-    font-size: 28px;
-    line-height: 1;
-    padding: 6px 10px;
-    cursor: pointer;
-    color: #fff;
-    background: transparent;
-    border: none;
-}
-
-/* Desktop menu (visible) */
-.navbar ul {
-    display: flex;
-    list-style: none;
-    position: relative;
-    top: 0;
-    right: 0;
-    background: transparent;
-    flex-direction: row;
-    width: auto;
-    max-width: none;
-    border-radius: 0;
-    box-shadow: none;
-    padding: 0;
-    z-index: 1000;
-}
-
-/* Ensure body content is pushed below navbar (adjust to your final navbar height) */
-body { padding-top: 140px; }
-
-/* Tablet and smaller: collapse into hamburger dropdown */
+/* ==========================
+   RESPONSIVE
+   ========================== */
 @media screen and (max-width: 1024px) {
-    .navbar {
-        justify-content: space-between;
-        padding: 8px 12px;
-    }
-
     .navbar .logo img {
-        max-height: 110px;
+        height: 80px;
     }
-
-    .navbar .hamburger {
-        display: block;
-    }
-
-    .navbar ul {
-        display: none; /* hidden until toggled */
-        list-style: none;
-        position: absolute;
-        top: 110px;
-        right: 12px;
-        background: #004d40;
-        flex-direction: column;
-        width: 320px;
-        max-width: calc(100% - 24px);
-        border-radius: 8px;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-        overflow: hidden;
-        z-index: 1500;
-        padding: 8px 0;
-    }
-    .navbar ul.show {
-        display: flex !important;
-    }
-    .navbar ul li { margin: 0; }
-    .navbar ul li a {
-        display: block;
-        padding: 12px 16px;
-        font-size: 16px;
-        color: #fff;
-        text-decoration: none;
-        white-space: nowrap;
-    }
-}
-
-/* Small phones */
-@media screen and (max-width: 420px) {
-    .navbar .logo img { max-height: 80px; }
-    .spacer { height: 100px; }
-    body { padding-top: 100px; }
 
     .navbar ul {
         top: 90px;
-        right: 8px;
-        left: 8px;
-        width: auto;
-        max-width: none;
+        right: 12px;
     }
 }
 
-/* Very small: fine tune */
-@media (max-width: 360px) {
-    .navbar .logo img { height: 40px; }
+@media screen and (max-width: 600px) {
+    .navbar .logo img {
+        height: 70px;
+    }
+
+    .navbar ul {
+        width: calc(100% - 24px);
+        right: 12px;
+        left: 12px;
+        border-radius: 8px;
+    }
+
+    .navbar ul li a {
+        font-size: 16px;
+        padding: 12px 14px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .navbar .logo img {
+        height: 60px;
+    }
+    body {
+        padding-top: 80px;
+    }
 }
