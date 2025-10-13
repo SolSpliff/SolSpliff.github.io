@@ -49,3 +49,26 @@ function setActiveLink() {
     }
   });
 }
+
+// ✅ Centralized placeholder values
+const PLACEHOLDERS = {
+  '{{TICKER}}': '{{Ticker TBA}}',
+  '{{CONTRACT_ADDRESS}}': '{{CA TBA}}',
+  '{{MULTISIG_ADDRESS}}': '{{Multi-Sig TBA}}'
+};
+
+// ✅ Function to replace placeholders throughout the document body
+function applyPlaceholders() {
+  let html = document.body.innerHTML;
+
+  for (const [key, value] of Object.entries(PLACEHOLDERS)) {
+    // Global regex to replace all occurrences of each placeholder
+    const regex = new RegExp(key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
+    html = html.replace(regex, value);
+  }
+
+  document.body.innerHTML = html;
+}
+
+// ✅ Run once the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', applyPlaceholders);
