@@ -1,7 +1,7 @@
 // ✅ Centralized placeholder values (edit these once here)
 const PLACEHOLDERS = {
-  '{{TICKER}}': '{{Ticker TBA}}',
-  '{{CONTRACT_ADDRESS}}': '{{CA_TBA}}',
+  '{{TICKER}}': '$SPLFF',
+  '{{CONTRACT_ADDRESS}}': 'HqCwywPRQCAE1jB1dnR1NqTk53wX2mDpyC27befjpump',
   '{{MULTISIG_ADDRESS}}': '{{MULTISIG_TBA}}'
 };
 
